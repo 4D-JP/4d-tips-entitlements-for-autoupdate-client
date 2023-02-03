@@ -70,11 +70,11 @@ com.apple.security.personal-information.photos-library
 
 1. 公証をパスするためには，*framework* *bundle* *plugin* *app* *dylib* *kext* といったバンドルに加えて，UNIX実行ファイル，*html* *js* *json* *so* といったファイルもコード署名する必要があります。これには，ビルド版サーバーアプリケーションの中にある*Upgrade4DClient* フォルダーの*info.json* も含まれます。署名する代わりに，実行権限を取り除くこともできます。
 
-1. 必要に応じ，サーバーとクライアントをそれぞれコード署名し，アーカイブして公証します。
-
 ```
 chmod 666
 ```
+
+1. 必要に応じ，サーバーとクライアントをそれぞれコード署名し，アーカイブして公証します。
 
 ## 例題
 
