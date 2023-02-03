@@ -278,7 +278,7 @@ Function buildAutoUpdateClientServer()->$status : Object
 	
 */
 	
-	$buildApp.settings.ArrayExcludedComponentName.Item:=New collection:C1472("4D Mobile App Server"; "4D ViewPro"; "4D WritePro Interface"; "4D Progress"; "4D SVG")
+	$buildApp.settings.ArrayExcludedComponentName.Item:=New collection:C1472("4D Mobile App Server")  //; "4D ViewPro"; "4D WritePro Interface"; "4D Progress"; "4D SVG")
 	$buildApp.settings.BuildApplicationName:=This:C1470.applicationName
 	$buildApp.settings.BuildMacDestFolder:=This:C1470.releaseFolder.folder(This:C1470.versionString).platformPath
 	$buildApp.settings.SourcesFiles.CS.ServerIncludeIt:=True:C214
