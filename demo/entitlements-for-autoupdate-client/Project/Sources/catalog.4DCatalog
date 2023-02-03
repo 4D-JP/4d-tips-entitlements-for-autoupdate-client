@@ -3,6 +3,6 @@
 <base name="entitlements-for-autoupdate-client" uuid="4BF8903808DD4D7EB04009DE73B43720" collation_locale="ja">
 	<schema name="DEFAULT_SCHEMA"/>
 	<base_extra __stringCompHash="icu:68.1.0, alternate=search" __keywordBuildingHash="mecab:0.996;sys.dic:102;">
-		<journal_file journal_file_enabled="true"/>
+		<journal_file journal_file_enabled="false"/>
 	</base_extra>
 </base>
