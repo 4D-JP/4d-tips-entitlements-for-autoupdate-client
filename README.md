@@ -32,3 +32,15 @@ com.apple.security.personal-information.photos-library
 **注記**: *4darchive* は4Dのクライアント/サーバーが使用する独自の圧縮形式ですが，v19 R2以降，標準的な*zip* 形式を選択することもできるようになりました。
 
 * [UseStandardZipFormat](https://doc.4d.com/4Dv19R7/4D/19-R7/UseStandardZipFormat.300-5943918.ja.html)
+
+## 問題
+
+通常のビルドであれば，署名をカスタマイズしたり，上書きする機会があります。
+
+* ビルド
+* ビルド➡︎署名
+
+しかし，自動アップデートのクライアントは一気にアーカイブまで進むため，ビルドアプリの署名をカスタマイズする機会がありません。
+
+* ビルド➡︎署名➡︎アーカイブ
+
