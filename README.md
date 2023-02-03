@@ -48,7 +48,7 @@ com.apple.security.personal-information.photos-library
 
 * *4D.app* アプリケーションの*Resources* フォルダーの中にある[*4D.entitlements*](https://github.com/4D-JP/4d-tips-entitlements-for-autoupdate-client/blob/main/4D.entitlements) ファイルを書き換える
 
-アプリケーションの中にあるファイルを書き換えると，コード署名が無効になります。また，アップデートがある度に同じことを繰り返さなければなりません。
+アプリケーションの中にあるファイルを書き換えると，コード署名が無効になります。また，アップデートの度に同じことを繰り返さなければなりません。
 
 * 4D Volume Desktopを署名する
 
