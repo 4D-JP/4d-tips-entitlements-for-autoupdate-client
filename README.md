@@ -9,19 +9,21 @@
 
 `true`に設定されているのは，下記のエンタイトルメントです。
 
-* `com.apple.security.automation.apple-events`
-* `com.apple.security.cs.allow-dyld-environment-variables`
-* `com.apple.security.cs.allow-jit`
-* `com.apple.security.cs.allow-unsigned-executable-memory`
-* `com.apple.security.cs.debugger`
-* `com.apple.security.cs.disable-executable-page-protection`
-* `com.apple.security.cs.disable-library-validation`
-* `com.apple.security.device.audio-input`
-* `com.apple.security.device.camera`
-* `com.apple.security.personal-information.addressbook`
-* `com.apple.security.personal-information.calendars`
-* `com.apple.security.personal-information.location`
-* `com.apple.security.personal-information.photos-library`
+```
+com.apple.security.automation.apple-events
+com.apple.security.cs.allow-dyld-environment-variables
+com.apple.security.cs.allow-jit
+com.apple.security.cs.allow-unsigned-executable-memory
+com.apple.security.cs.debugger
+com.apple.security.cs.disable-executable-page-protection
+com.apple.security.cs.disable-library-validation
+com.apple.security.device.audio-input
+com.apple.security.device.camera
+com.apple.security.personal-information.addressbook
+com.apple.security.personal-information.calendars
+com.apple.security.personal-information.location
+com.apple.security.personal-information.photos-library
+```
 
 コード署名は，デスクトップ・サーバー・クライアントのそれぞれに付与されます。
 
