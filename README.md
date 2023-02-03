@@ -57,3 +57,20 @@ com.apple.security.personal-information.photos-library
 * 自動アップデート用のクライアントを単独でビルド〜署名し，*zip*形式でアーカイブする
 
 [ClientMacFolderToWin](https://doc.4d.com/4Dv19R7/4D/19-R7/ClientMacFolderToWin.300-5943942.ja.html)とは違い，[ClientMacFolderToMac](https://doc.4d.com/4Dv19R7/4D/19-R7/ClientMacFolderToMac.300-5943953.ja.html)には*4darchive* 形式のクライアントを渡すことができません。
+
+## 回避策
+
+下記の要領で自動アップデート用のクライアントを署名することができます。
+
+1. *4D Volume Desktop* を作業フォルダーにコピーします。マスターを書き換えないで済ませるためです。
+
+1. 必要なエンタイトルメントで*4D Volume Desktop* を署名します。アプリケーションビルドのコード署名は，すでに署名されているモジュールの署名を上書きするオプション（`--force --deep`）になっていないことを利用します。*Info.plist* をカスタマイズすることもできますが，`CFBundleVersion`は*4D Volume Desktop* のバージョンチェックに使用されているため，変更するとビルドが中止されてしまうので注意が必要です。
+
+1. コピーした*4D Volume Desktop* のパスを指定してクライアント/サーバー版アプリケーションをビルドします。自動アップデート用のクライアントはすでに署名されているため，カスタマイズされたエンタイトルメントが上書きされずに残されます。
+
+1. 公証をパスするためには，*framework* *bundle* *plugin* *app* *dylib* *kext* といったバンドルに加えて，UNIX実行ファイル，*html* *js* *json* といったファイルもコード署名する必要があります。これには，ビルド版サーバーアプリケーションの中にある*Upgrade4DClient* フォルダーの*info.json* も含まれます。署名する代わりに，実行権限を取り除くこともできます。
+
+```
+chmod 666
+```
+
