@@ -89,3 +89,5 @@ $status:=$build.buildAutoUpdateClientServer()
 ビルド版サーバーおよびクライアントは`Temporary folder`に作られます。
 
 詳細はメソッドのコメントを参照してください。
+
+**注記**: サンプルは*Default Data* を使用しているため，サーバーを起動するとデータファイルがリードオンリーで開かれます。
