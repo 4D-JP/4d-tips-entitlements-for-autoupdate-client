@@ -5,7 +5,7 @@
 
 デザインモードの[アプリケーションビルド](https://developer.4d.com/docs/ja/19/Desktop/building/#アプリケーションのビルド)は，アプリのコード署名をサポートしています。署名には，*4D.app* アプリケーションの*Resources* フォルダーの中にあるシェルスクリプト[*SignApp.sh*](https://github.com/4D-JP/4d-tips-entitlements-for-autoupdate-client/blob/main/SignApp.sh) が使用されます。
 
-特定のリソースに対するアクセスを求めるための`--entitlements`は，同じく*4D.app* アプリケーションの*Resources* フォルダーの中にある[*4D.entitlements*](https://github.com/4D-JP/4d-tips-entitlements-for-autoupdate-client/blob/main/4D.entitlements) ファイルが渡されます。
+特定のリソースに対するアクセスを求めるための`--entitlements`には，同じく*4D.app* アプリケーションの*Resources* フォルダーの中にある[*4D.entitlements*](https://github.com/4D-JP/4d-tips-entitlements-for-autoupdate-client/blob/main/4D.entitlements) ファイルが渡されます。
 
 `true`に設定されているのは，下記のエンタイトルメントです。
 
@@ -48,11 +48,11 @@ com.apple.security.personal-information.photos-library
 
 * *4D.app* アプリケーションの*Resources* フォルダーの中にある[*4D.entitlements*](https://github.com/4D-JP/4d-tips-entitlements-for-autoupdate-client/blob/main/4D.entitlements) ファイルを書き換える
 
-アプリケーションの中にあるファイルを書き換えると，コード署名が無効になります。また，アップデートがある度に同じことを繰り返さなければなりません。
+アプリケーションの中にあるファイルを書き換えると，コード署名が無効になります。また，アップデートの度に同じことを繰り返さなければなりません。
 
 * 4D Volume Desktopを署名する
 
-署名はビルド前ではなく，ビルド後でなければならないため，この方法は効果がありません。
+ビルド前に署名すれば，エンタイトルメントをカスタマイズすることができますが，*4D Volume Desktop* を書き換えてしまうことになり，以後のビルドプロセスに影響が及ぶ恐れがあります。
 
 * 自動アップデート用のクライアントを単独でビルド〜署名し，*zip*形式でアーカイブする
 
@@ -60,7 +60,7 @@ com.apple.security.personal-information.photos-library
 
 ## 回避策
 
-下記の要領で自動アップデート用のクライアントを署名することができます。
+下記の要領で自動アップデート用のクライアント/サーバーアプリケーションを署名することができます。
 
 1. *4D Volume Desktop* を作業フォルダーにコピーします。マスターを書き換えないで済ませるためです。
 
@@ -74,6 +74,8 @@ com.apple.security.personal-information.photos-library
 chmod 666
 ```
 
+1. 必要に応じ，サーバーとクライアントをそれぞれコード署名し，アーカイブして公証します。
+
 ## 例題
 
 下記の要領でクライアント自動アップデートに対応したサーバーをビルド〜署名〜アーカイブ〜公証することができます。
@@ -84,6 +86,6 @@ $build:=cs.Build.new()
 $status:=$build.buildAutoUpdateClientServer()
 ```
 
-ビルド版サーバーは`Temporary folder`に作られます。
+ビルド版サーバーおよびクライアントは`Temporary folder`に作られます。
 
 詳細はメソッドのコメントを参照してください。
