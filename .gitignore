@@ -1,0 +1,7 @@
+demo/Releases/*
+demo/entitlements-for-autoupdate-client/Project/DerivedData/CompiledCode/*
+demo/startup/Project/DerivedData/CompiledCode/*
+demo/startup/userPreferences.*
+demo/entitlements-for-autoupdate-client/Data/Logs/*
+demo/entitlements-for-autoupdate-client/userPreferences.*
+demo/startup/Data/Logs/*
