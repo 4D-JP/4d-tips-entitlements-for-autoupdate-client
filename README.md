@@ -38,9 +38,22 @@ com.apple.security.personal-information.photos-library
 通常のビルドであれば，署名をカスタマイズしたり，上書きする機会があります。
 
 * ビルド
-* ビルド➡︎署名
+* ビルド〜署名
 
 しかし，自動アップデートのクライアントは一気にアーカイブまで進むため，ビルドアプリの署名をカスタマイズする機会がありません。
 
-* ビルド➡︎署名➡︎アーカイブ
+* ビルド〜署名〜アーカイブ
 
+## 不完全な回避策
+
+* *4D.app* アプリケーションの*Resources* フォルダーの中にある[*4D.entitlements*](https://github.com/4D-JP/4d-tips-entitlements-for-autoupdate-client/blob/main/4D.entitlements) ファイルを書き換える
+
+アプリケーションの中にあるファイルを書き換えると，コード署名が無効になります。また，アップデートがある度に同じことを繰り返さなければなりません。
+
+* 4D Volume Desktopを署名する
+
+署名はビルド前ではなく，ビルド後でなければならないため，この方法は効果がありません。
+
+* 自動アップデート用のクライアントを単独でビルド〜署名し，*zip*形式でアーカイブする
+
+[ClientMacFolderToWin](https://doc.4d.com/4Dv19R7/4D/19-R7/ClientMacFolderToWin.300-5943942.ja.html)とは違い，[ClientMacFolderToMac](https://doc.4d.com/4Dv19R7/4D/19-R7/ClientMacFolderToMac.300-5943953.ja.html)には*4darchive* 形式のクライアントを渡すことができません。
