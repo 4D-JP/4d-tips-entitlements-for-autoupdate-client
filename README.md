@@ -68,7 +68,7 @@ com.apple.security.personal-information.photos-library
 
 1. コピーした*4D Volume Desktop* のパスを指定してクライアント/サーバー版アプリケーションをビルドします。自動アップデート用のクライアントはすでに署名されているため，カスタマイズされたエンタイトルメントが上書きされずに残されます。
 
-1. 公証をパスするためには，*framework* *bundle* *plugin* *app* *dylib* *kext* といったバンドルに加えて，UNIX実行ファイル，*html* *js* *json* といったファイルもコード署名する必要があります。これには，ビルド版サーバーアプリケーションの中にある*Upgrade4DClient* フォルダーの*info.json* も含まれます。署名する代わりに，実行権限を取り除くこともできます。
+1. 公証をパスするためには，*framework* *bundle* *plugin* *app* *dylib* *kext* といったバンドルに加えて，UNIX実行ファイル，*html* *js* *json* *so* といったファイルもコード署名する必要があります。これには，ビルド版サーバーアプリケーションの中にある*Upgrade4DClient* フォルダーの*info.json* も含まれます。署名する代わりに，実行権限を取り除くこともできます。
 
 ```
 chmod 666
