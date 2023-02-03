@@ -74,3 +74,16 @@ com.apple.security.personal-information.photos-library
 chmod 666
 ```
 
+## 例題
+
+下記の要領でクライアント自動アップデートに対応したサーバーをビルド〜署名〜アーカイブ〜公証することができます。
+
+```4d
+$build:=cs.Build.new()
+
+$status:=$build.buildAutoUpdateClientServer()
+```
+
+ビルド版サーバーは`Temporary folder`に作られます。
+
+詳細はメソッドのコメントを参照してください。
